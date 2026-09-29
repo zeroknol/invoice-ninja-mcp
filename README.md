@@ -2,6 +2,15 @@
 
 An MCP (Model Context Protocol) server for [Invoice Ninja](https://invoiceninja.com) v5. Create invoices, manage clients, record payments, and more through Claude.
 
+## ⚠️ Security Notice
+
+**Never commit API tokens or credentials to version control.** This repository's Git history may contain exposed credentials. If you are using this project:
+
+1. Review the [SECURITY.md](./SECURITY.md) guide
+2. Assume any tokens in public forks are compromised
+3. Rotate your Invoice Ninja API tokens immediately
+4. Use only fresh, restricted tokens generated after this date
+
 ## Features
 
 26 tools across 7 categories:
@@ -52,6 +61,8 @@ You need two things:
 
 1. **Invoice Ninja URL** - Your Invoice Ninja instance URL (e.g., `https://invoicing.co` or your self-hosted URL)
 2. **API Token** - Generate from Invoice Ninja: Settings > Account Management > API Tokens
+   - **Use a restricted token with minimal necessary permissions**
+   - Do not use admin or super-user tokens
 
 ## Installation
 
@@ -129,7 +140,7 @@ pnpm run watch
 
 ### Testing locally
 
-Create a `.env` file with your credentials (already in `.gitignore`):
+Create a `.env` file in the project root with your credentials (`.env` is in `.gitignore` and will not be committed):
 
 ```
 INVOICE_NINJA_URL=https://your-instance.invoicing.co
